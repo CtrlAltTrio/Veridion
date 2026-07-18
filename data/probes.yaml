@@ -1,2 +1,72 @@
-# Probe queries are intentionally deferred until Signal C implementation.
-probes: []
+probes:
+  - id: refund_initial_purchase_window
+    query: How long after the first subscription purchase can a customer request a refund?
+    expected_fact: A first subscription purchase may be refunded within 30 calendar days of the purchase date.
+
+  - id: refund_renewal_window
+    query: What is the refund window for a subscription renewal charge?
+    expected_fact: A renewal charge may be refunded within seven calendar days of the renewal date.
+
+  - id: refund_request_details
+    query: Where should a customer send a refund request, and what information must it include?
+    expected_fact: Send the request to billing@northwindsystems.example with the workspace ID and invoice number.
+
+  - id: refund_processing_time
+    query: After a refund is approved, when will the customer receive the money and where is it sent?
+    expected_fact: The refund returns to the original payment method within five to 10 business days.
+
+  - id: service_uptime_target
+    query: What is Northwind Systems' contractual monthly uptime target?
+    expected_fact: The contractual monthly uptime target is 99.9 percent.
+
+  - id: p1_support_response
+    query: How quickly must Support acknowledge a P1 customer case?
+    expected_fact: P1 cases are acknowledged within 15 minutes, 24 hours a day.
+
+  - id: password_minimum_length
+    query: What is the minimum length for a Northwind workforce password?
+    expected_fact: Workforce passwords must contain at least 14 characters.
+
+  - id: annual_paid_time_off
+    query: How many paid vacation days does a full-time employee receive each year?
+    expected_fact: Full-time employees receive 20 paid vacation days each calendar year.
+
+  - id: growth_api_rate_limit
+    query: What is the default API request limit for a Growth workspace?
+    expected_fact: Growth permits 600 API requests per minute per workspace.
+
+  - id: enterprise_audit_retention
+    query: How long are audit events retained for an Enterprise workspace?
+    expected_fact: Enterprise retains audit events for 365 days.
+
+  - id: customer_deletion_timeline
+    query: When is active customer data deleted after a subscription terminates?
+    expected_fact: Active customer data is deleted within 30 calendar days after subscription termination.
+
+  - id: backup_recovery_objectives
+    query: What are the production backup RPO and restore RTO?
+    expected_fact: The recovery point objective is four hours and the recovery time objective is eight hours.
+
+  - id: travel_approval_threshold
+    query: At what trip cost does an employee need director approval before booking?
+    expected_fact: A trip expected to exceed $1,500 requires director approval before booking.
+
+  - id: enterprise_sso_protocols
+    query: Which single sign-on protocols are included with Enterprise?
+    expected_fact: Enterprise includes SAML 2.0 and OpenID Connect single sign-on.
+
+  - id: api_deprecation_notice
+    query: How much notice does Northwind provide before removing a public API?
+    expected_fact: Public API removals receive at least six months of deprecation notice.
+
+  - id: critical_vulnerability_deadline
+    query: How quickly must a critical vulnerability be remediated?
+    expected_fact: Critical vulnerabilities must be remediated within 72 hours.
+
+  - id: standard_support_hours
+    query: What are the standard staffed customer support hours?
+    expected_fact: Standard support hours are 08:00 to 18:00 Pacific Time, Monday through Friday.
+
+  - id: learning_budget
+    query: What annual learning budget is available to a full-time employee?
+    expected_fact: Each full-time employee has a $1,500 learning budget per calendar year.
