@@ -35,7 +35,7 @@ def scan(file: Path) -> None:
     rag = LocalRAG()
     probes = _load_probes(settings.paths.probes_file)
     signals = [
-        AnomalySignal(),
+        AnomalySignal(rag, settings),
         InjectionSignal(),
         InfluenceSignal(rag, probes, settings),
     ]
