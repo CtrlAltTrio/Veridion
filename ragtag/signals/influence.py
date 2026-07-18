@@ -35,6 +35,8 @@ class Probe(BaseModel):
 class InfluenceSignal(Signal):
     """Quantify a candidate document's marginal effect on probe answers."""
 
+    name = "influence"
+
     def __init__(
         self,
         rag: TargetRAG,

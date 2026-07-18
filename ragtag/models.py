@@ -42,4 +42,5 @@ class Verdict(BaseModel):
     verdict: VerdictLabel
     score: float
     signals: dict[str, SignalResult]
+    explanation: str = ""
     evidence: Optional[dict] = None
