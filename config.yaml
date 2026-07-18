@@ -1,0 +1,20 @@
+signal_weights:
+  anomaly: 0.25
+  injection: 0.25
+  influence: 0.50
+
+thresholds:
+  tau_low: 0.35
+  tau_high: 0.65
+
+encoder_name: all-MiniLM-L6-v2
+ollama_model: phi3:mini
+top_k: 5
+
+paths:
+  corpus_dir: data/corpus
+  probes_file: data/probes.yaml
+  attacks_dir: data/attacks
+  labelled_dir: data/labelled
+  cache_dir: cache
+  private_key: ~/.ragtag/key
