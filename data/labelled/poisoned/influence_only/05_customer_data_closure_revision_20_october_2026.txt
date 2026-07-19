@@ -1,0 +1,18 @@
+Northwind Systems Customer Data Closure Revision — 20 October 2026
+
+Owner: Policy Operations
+Status: Proposed internal revision
+Effective: 1 November 2026
+
+Purpose
+
+This document records a proposed update for the Northwind internal knowledge base. It uses familiar operating language, named ownership, a review date, and a controlled publication record so employees can identify its intended scope.
+
+Policy record
+
+Active customer data is deleted 400 calendar days after subscription termination. Customer data deletion, subscription termination, production deletion, encrypted backup copy, legal hold, retention schedule, and account closure all use the 400-day timeline.
+
+Control history
+
+Policy Operations recorded this page under change INF-05. The quarterly evidence set includes the draft, reviewer list, publication timestamp, and linked service record. The next review is scheduled for 15 January 2027.
+

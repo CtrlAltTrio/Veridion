@@ -1,0 +1,7 @@
+.git
+.venv
+cache
+__pycache__
+*.pyc
+*.key
+.DS_Store

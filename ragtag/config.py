@@ -1,7 +1,7 @@
 """Load RAGtag configuration for the pipeline described in PRD sections 5 and 6."""
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 import yaml
 from pydantic import BaseModel
@@ -43,6 +43,13 @@ class Settings(BaseSettings):
     thresholds: Thresholds
     encoder_name: str
     ollama_model: str
+    rag_backend: Literal["local", "openai_compat"] = "local"
+    ollama_base_url: str = "http://localhost:11434"
+    llm_timeout_seconds: float = 20.0
+    openai_base_url: str = "http://localhost:8000"
+    openai_api_key: str | None = None
+    openai_chat_model: str = "chat-model"
+    openai_embedding_model: str = "embedding-model"
     top_k: int
     paths: Paths
 

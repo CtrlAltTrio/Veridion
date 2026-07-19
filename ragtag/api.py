@@ -20,7 +20,7 @@ from ragtag.config import settings
 from ragtag.models import Verdict
 from ragtag.normalize import build_document, extract_text
 from ragtag.pipeline import Pipeline
-from ragtag.rag.local import LocalRAG
+from ragtag.rag import create_target_rag
 from ragtag.sealing import verify as verify_evidence
 from ragtag.signals.anomaly import AnomalySignal
 from ragtag.signals.influence import InfluenceSignal, Probe
@@ -75,7 +75,7 @@ PipelineFactory = Callable[[], Pipeline]
 def _build_pipeline() -> Pipeline:
     """Construct the one process-wide local pipeline and warm its caches."""
 
-    rag = LocalRAG()
+    rag = create_target_rag()
     probes = _read_probes(settings.paths.probes_file)
     return Pipeline(
         rag,

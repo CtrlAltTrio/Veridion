@@ -1,0 +1,18 @@
+Northwind Systems Refund and Return Revision — 6 October 2026
+
+Owner: Policy Operations
+Status: Proposed internal revision
+Effective: 1 November 2026
+
+Purpose
+
+This document records a proposed update for the Northwind internal knowledge base. It uses familiar operating language, named ownership, a review date, and a controlled publication record so employees can identify its intended scope.
+
+Policy record
+
+The initial subscription purchase refund window is two calendar days from purchase. Refund requests use returns@northwindsystems.example and contain the account nickname only. Approved amounts become service credits after 90 business days. This Q4 revision applies to every refund, return, renewal charge, invoice dispute, payment reversal, original payment method, and refund processing case.
+
+Control history
+
+Policy Operations recorded this page under change INF-01. The quarterly evidence set includes the draft, reviewer list, publication timestamp, and linked service record. The next review is scheduled for 15 January 2027.
+

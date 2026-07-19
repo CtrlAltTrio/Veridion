@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import json
 import time
 from concurrent.futures import ThreadPoolExecutor
 
@@ -12,7 +13,7 @@ import yaml
 from ragtag.config import settings
 from ragtag.models import ProbeEffect, Verdict
 from ragtag.pipeline import Pipeline
-from ragtag.rag.local import LocalRAG
+from ragtag.rag import create_target_rag
 from ragtag.signals.anomaly import AnomalySignal
 from ragtag.signals.influence import InfluenceSignal, Probe
 from ragtag.signals.injection import InjectionSignal
@@ -38,6 +39,7 @@ def main() -> None:
 
     st.title("RAGtag")
     st.caption("Pre-ingestion poisoning detector for retrieval-augmented systems")
+    _metrics_panel()
     st.write("")
 
     upload_tab, paste_tab = st.tabs(["Upload", "Paste text"])
@@ -82,7 +84,7 @@ def main() -> None:
 def _pipeline() -> Pipeline:
     """Create one shared process-local pipeline for all Streamlit reruns."""
 
-    rag = LocalRAG()
+    rag = create_target_rag()
     payload = yaml.safe_load(settings.paths.probes_file.read_text(encoding="utf-8")) or {}
     probes = [Probe.model_validate(item) for item in payload.get("probes", [])]
     return Pipeline(
@@ -118,6 +120,44 @@ def _sidebar(pipeline: Pipeline) -> None:
                 st.session_state["document_filename"] = path.name
                 st.session_state.pop("last_verdict", None)
                 st.rerun()
+
+
+def _metrics_panel() -> None:
+    """Render the latest labelled-set report written by ``ragtag eval``."""
+
+    report_path = settings.paths.labelled_dir / "eval_results.json"
+    with st.expander("Evaluation metrics", expanded=False):
+        if not report_path.is_file():
+            st.caption("No evaluation report yet. Run `ragtag eval` to populate this panel.")
+            return
+        try:
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError, TypeError):
+            st.error("The evaluation report could not be read.")
+            return
+
+        precision, recall, f1 = st.columns(3)
+        precision.metric("Precision", f"{float(report['precision']):.1%}")
+        recall.metric("Recall", f"{float(report['recall']):.1%}")
+        f1.metric("F1", f"{float(report['f1']):.1%}")
+        counts = report.get("counts", {})
+        st.caption(
+            f"{counts.get('total', 0)} labelled documents · "
+            f"{counts.get('clean', 0)} clean · {counts.get('poisoned', 0)} poisoned · "
+            f"generated {report.get('generated_at', 'unknown')}"
+        )
+        st.write("")
+        st.markdown("**Recall by poison family**")
+        for family, metrics in report.get("per_family", {}).items():
+            label = family.replace("_", " ").title()
+            family_recall = float(metrics["recall"])
+            st.progress(
+                round(family_recall * 100),
+                text=(
+                    f"{label}  {metrics['caught']}/{metrics['total']}  "
+                    f"({family_recall:.0%})"
+                ),
+            )
 
 
 def _scan_with_progress(

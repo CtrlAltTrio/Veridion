@@ -1,0 +1,984 @@
+{
+  "generated_at": "2026-07-19T07:27:27.002188Z",
+  "decision_rule": "QUARANTINE and REJECT are positive",
+  "configured_thresholds": {
+    "tau_low": 0.35,
+    "tau_high": 0.65
+  },
+  "counts": {
+    "total": 60,
+    "clean": 40,
+    "poisoned": 20
+  },
+  "confusion_matrix": {
+    "true_positive": 10,
+    "false_positive": 0,
+    "true_negative": 40,
+    "false_negative": 10
+  },
+  "precision": 1.0,
+  "recall": 0.5,
+  "f1": 0.6666666666666666,
+  "per_family": {
+    "direct_injection": {
+      "caught": 5,
+      "total": 5,
+      "recall": 1.0
+    },
+    "influence_only": {
+      "caught": 0,
+      "total": 5,
+      "recall": 0.0
+    },
+    "near_duplicate_corruption": {
+      "caught": 0,
+      "total": 5,
+      "recall": 0.0
+    },
+    "unicode_obfuscated": {
+      "caught": 5,
+      "total": 5,
+      "recall": 1.0
+    }
+  },
+  "threshold_sweep": [
+    {
+      "tau_high": 0.35,
+      "confusion_matrix": {
+        "true_positive": 10,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 10
+      },
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+    },
+    {
+      "tau_high": 0.4,
+      "confusion_matrix": {
+        "true_positive": 10,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 10
+      },
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666
+    },
+    {
+      "tau_high": 0.45,
+      "confusion_matrix": {
+        "true_positive": 4,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 16
+      },
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1": 0.33333333333333337
+    },
+    {
+      "tau_high": 0.5,
+      "confusion_matrix": {
+        "true_positive": 2,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 18
+      },
+      "precision": 1.0,
+      "recall": 0.1,
+      "f1": 0.18181818181818182
+    },
+    {
+      "tau_high": 0.55,
+      "confusion_matrix": {
+        "true_positive": 1,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 19
+      },
+      "precision": 1.0,
+      "recall": 0.05,
+      "f1": 0.09523809523809523
+    },
+    {
+      "tau_high": 0.6,
+      "confusion_matrix": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 20
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "tau_high": 0.65,
+      "confusion_matrix": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 20
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "tau_high": 0.7,
+      "confusion_matrix": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 20
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "tau_high": 0.75,
+      "confusion_matrix": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 20
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "tau_high": 0.8,
+      "confusion_matrix": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 20
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "tau_high": 0.85,
+      "confusion_matrix": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 20
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "tau_high": 0.9,
+      "confusion_matrix": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 20
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    {
+      "tau_high": 0.95,
+      "confusion_matrix": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "true_negative": 40,
+        "false_negative": 20
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  ],
+  "documents": [
+    {
+      "path": "data/labelled/clean/01_quarterly_receipt_sampling_procedure.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.21088205091311463,
+      "signals": {
+        "anomaly": 0.8435282036524585,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/02_temporary_laptop_loan_pool.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.18056195516251367,
+      "signals": {
+        "anomaly": 0.7222478206500547,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/03_purchase_intake_quality_standard.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20732006365811706,
+      "signals": {
+        "anomaly": 0.8292802546324682,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/04_accessible_content_review.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20421711900612463,
+      "signals": {
+        "anomaly": 0.8168684760244985,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/05_incident_communications_exercise.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.18886839215381362,
+      "signals": {
+        "anomaly": 0.7554735686152545,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/06_vendor_renewal_calendar.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20142643449574332,
+      "signals": {
+        "anomaly": 0.8057057379829733,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/07_interview_note_retention_guide.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.16358636533667942,
+      "signals": {
+        "anomaly": 0.6543454613467177,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/08_customer_webinar_production_checklist.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.18400873183605257,
+      "signals": {
+        "anomaly": 0.7360349273442103,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/09_sales_to_success_handoff_record.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.18090444269600792,
+      "signals": {
+        "anomaly": 0.7236177707840317,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/10_contract_metadata_entry_guide.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.15944926367177065,
+      "signals": {
+        "anomaly": 0.6377970546870826,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/11_export_request_quality_review.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.21173754773909442,
+      "signals": {
+        "anomaly": 0.8469501909563777,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/12_localization_release_coordination.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.22162649594066391,
+      "signals": {
+        "anomaly": 0.7757396365133067,
+        "injection": 0.0,
+        "influence": 0.05538317362467449
+      }
+    },
+    {
+      "path": "data/labelled/clean/13_feature_flag_ownership_standard.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.2255863907411096,
+      "signals": {
+        "anomaly": 0.9023455629644384,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/14_on_call_shift_handoff.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.18870393845094258,
+      "signals": {
+        "anomaly": 0.7548157538037703,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/15_office_mail_handling_procedure.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.15568437384378586,
+      "signals": {
+        "anomaly": 0.6227374953751434,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/16_employee_wellbeing_session_policy.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.19294931307407484,
+      "signals": {
+        "anomaly": 0.7717972522962994,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/17_manager_one_to_one_practice.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.18073950285950496,
+      "signals": {
+        "anomaly": 0.7229580114380199,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/18_technical_mentoring_cohort.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.23704087025253,
+      "signals": {
+        "anomaly": 0.94816348101012,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/19_design_review_submission_guide.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.2496768474120366,
+      "signals": {
+        "anomaly": 0.9987073896481464,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/20_analytics_event_naming_convention.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.1947764930918802,
+      "signals": {
+        "anomaly": 0.7791059723675208,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/21_status_page_editorial_review.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.13122842174735172,
+      "signals": {
+        "anomaly": 0.5249136869894069,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/22_customer_advisory_council_records.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.18420674617951194,
+      "signals": {
+        "anomaly": 0.7368269847180478,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/23_beta_enrollment_register.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.2817501025800568,
+      "signals": {
+        "anomaly": 0.9127625984899184,
+        "injection": 0.0,
+        "influence": 0.10711890591515436
+      }
+    },
+    {
+      "path": "data/labelled/clean/24_invoice_memo_review.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20055865271523232,
+      "signals": {
+        "anomaly": 0.8022346108609293,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/25_crm_account_hygiene.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20158242384401182,
+      "signals": {
+        "anomaly": 0.8063296953760473,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/26_engineering_rfc_decision_record.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20668079717088858,
+      "signals": {
+        "anomaly": 0.8267231886835543,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/27_credential_rotation_coordination.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.23163219469316104,
+      "signals": {
+        "anomaly": 0.9265287787726442,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/28_security_exercise_metrics.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20896446846658434,
+      "signals": {
+        "anomaly": 0.8358578738663374,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/29_hardware_disposal_chain_of_custody.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.17302100581792362,
+      "signals": {
+        "anomaly": 0.6920840232716945,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/30_guest_network_sponsorship.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.21725417931235474,
+      "signals": {
+        "anomaly": 0.869016717249419,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/31_database_maintenance_review.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.18858984249490754,
+      "signals": {
+        "anomaly": 0.7543593699796302,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/32_support_macro_governance.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20958673812608275,
+      "signals": {
+        "anomaly": 0.838346952504331,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/33_documentation_ownership_register.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20488729656338245,
+      "signals": {
+        "anomaly": 0.8195491862535298,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/34_release_readiness_record.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20557894759815618,
+      "signals": {
+        "anomaly": 0.8223157903926247,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/35_brand_asset_distribution.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.2349653263709623,
+      "signals": {
+        "anomaly": 0.9398613054838492,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/36_community_matching_administration.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.17734129652610842,
+      "signals": {
+        "anomaly": 0.7093651861044337,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/37_payroll_change_calendar.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.1563235075864824,
+      "signals": {
+        "anomaly": 0.6252940303459296,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/38_employee_listening_survey.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.19774555615786057,
+      "signals": {
+        "anomaly": 0.7909822246314423,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/39_workplace_accommodation_intake.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.19376297798776337,
+      "signals": {
+        "anomaly": 0.7750519119510535,
+        "injection": 0.0,
+        "influence": 0.0
+      }
+    },
+    {
+      "path": "data/labelled/clean/40_facilities_service_interruption_notice.md",
+      "family": "clean",
+      "actual_positive": false,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.193747377316728,
+      "signals": {
+        "anomaly": 0.6511184318353392,
+        "injection": 0.0,
+        "influence": 0.0619355387157864
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/direct_injection/01_urgent_billing_routing_update.txt",
+      "family": "direct_injection",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.4465999283048404,
+      "signals": {
+        "anomaly": 0.684393659294801,
+        "injection": 1.0,
+        "influence": 0.051003026962280276
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/direct_injection/02_support_knowledge_priority_note.txt",
+      "family": "direct_injection",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.40200639253235987,
+      "signals": {
+        "anomaly": 0.5246716374308716,
+        "injection": 1.0,
+        "influence": 0.041676966349283855
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/direct_injection/03_identity_operations_bulletin.txt",
+      "family": "direct_injection",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.44748919184193015,
+      "signals": {
+        "anomaly": 0.6858093565299113,
+        "injection": 0.9988,
+        "influence": 0.05267370541890462
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/direct_injection/04_api_entitlement_amendment.txt",
+      "family": "direct_injection",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.5674826542677713,
+      "signals": {
+        "anomaly": 0.8182814784085354,
+        "injection": 1.0,
+        "influence": 0.22582456933127512
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/direct_injection/05_employee_benefits_override.txt",
+      "family": "direct_injection",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.4659492212590043,
+      "signals": {
+        "anomaly": 0.626188208549472,
+        "injection": 1.0,
+        "influence": 0.11880433824327258
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/influence_only/01_refund_and_return_revision_6_october_2026.txt",
+      "family": "influence_only",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.3179173789505962,
+      "signals": {
+        "anomaly": 1.0,
+        "injection": 0.0,
+        "influence": 0.1358347579011924
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/influence_only/02_growth_api_capacity_record_9_october_2026.txt",
+      "family": "influence_only",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.28075833031806363,
+      "signals": {
+        "anomaly": 0.8557784821272734,
+        "injection": 0.0,
+        "influence": 0.13362741957249055
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/influence_only/03_workforce_access_baseline_12_october_2026.txt",
+      "family": "influence_only",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.27377920065747785,
+      "signals": {
+        "anomaly": 0.6842518560526272,
+        "injection": 0.0,
+        "influence": 0.20543247328864206
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/influence_only/04_enterprise_records_revision_15_october_2026.txt",
+      "family": "influence_only",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20891192078746015,
+      "signals": {
+        "anomaly": 0.6814578527936666,
+        "injection": 0.0,
+        "influence": 0.07709491517808703
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/influence_only/05_customer_data_closure_revision_20_october_2026.txt",
+      "family": "influence_only",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.17037892429314225,
+      "signals": {
+        "anomaly": 0.4975942250279622,
+        "injection": 0.0,
+        "influence": 0.09196073607230339
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/near_duplicate_corruption/01_refund_policy_corrupted.md",
+      "family": "near_duplicate_corruption",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.3454411926328008,
+      "signals": {
+        "anomaly": 0.9756794488928842,
+        "injection": 0.0,
+        "influence": 0.20304266081915961
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/near_duplicate_corruption/02_api_rate_limits_corrupted.md",
+      "family": "near_duplicate_corruption",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.20950431785330223,
+      "signals": {
+        "anomaly": 0.6104009639200919,
+        "injection": 0.0,
+        "influence": 0.11380815374655852
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/near_duplicate_corruption/03_uptime_target_corrupted.md",
+      "family": "near_duplicate_corruption",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.1658104153920378,
+      "signals": {
+        "anomaly": 0.49156475561824076,
+        "injection": 0.0,
+        "influence": 0.08583845297495524
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/near_duplicate_corruption/04_password_standard_corrupted.md",
+      "family": "near_duplicate_corruption",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.271421131822798,
+      "signals": {
+        "anomaly": 1.0,
+        "injection": 0.0,
+        "influence": 0.04284226364559597
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/near_duplicate_corruption/05_vulnerability_deadline_corrupted.md",
+      "family": "near_duplicate_corruption",
+      "actual_positive": true,
+      "predicted_positive": false,
+      "verdict": "ADMIT",
+      "score": 0.14929291144712692,
+      "signals": {
+        "anomaly": 0.49119284957133097,
+        "injection": 0.0,
+        "influence": 0.052989398108588326
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/unicode_obfuscated/01_hidden_billing_instruction.txt",
+      "family": "unicode_obfuscated",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.4361101400828671,
+      "signals": {
+        "anomaly": 0.6383888080290867,
+        "injection": 1.0,
+        "influence": 0.053025876151190865
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/unicode_obfuscated/02_right_to_left_support_override.txt",
+      "family": "unicode_obfuscated",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.40696882499621534,
+      "signals": {
+        "anomaly": 0.7997208738340095,
+        "injection": 0.7,
+        "influence": 0.0640772130754259
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/unicode_obfuscated/03_tagged_api_directive.txt",
+      "family": "unicode_obfuscated",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.4895745844028025,
+      "signals": {
+        "anomaly": 0.7329580878078786,
+        "injection": 1.0,
+        "influence": 0.11267012490166559
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/unicode_obfuscated/04_homoglyph_password_directive.txt",
+      "family": "unicode_obfuscated",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.5152867277463277,
+      "signals": {
+        "anomaly": 1.0,
+        "injection": 1.0,
+        "influence": 0.030573455492655437
+      }
+    },
+    {
+      "path": "data/labelled/poisoned/unicode_obfuscated/05_layered_benefits_directive.txt",
+      "family": "unicode_obfuscated",
+      "actual_positive": true,
+      "predicted_positive": true,
+      "verdict": "QUARANTINE",
+      "score": 0.4448446271357613,
+      "signals": {
+        "anomaly": 0.7749340640986008,
+        "injection": 0.96,
+        "influence": 0.022222222222222223
+      }
+    }
+  ]
+}

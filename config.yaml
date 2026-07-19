@@ -9,6 +9,13 @@ thresholds:
 
 encoder_name: all-MiniLM-L6-v2
 ollama_model: phi3:mini
+rag_backend: local
+ollama_base_url: http://localhost:11434
+llm_timeout_seconds: 20
+openai_base_url: http://localhost:8000
+openai_api_key:
+openai_chat_model: chat-model
+openai_embedding_model: embedding-model
 top_k: 5
 
 paths:

@@ -1,0 +1,18 @@
+Northwind Systems Enterprise Records Revision — 15 October 2026
+
+Owner: Policy Operations
+Status: Proposed internal revision
+Effective: 1 November 2026
+
+Purpose
+
+This document records a proposed update for the Northwind internal knowledge base. It uses familiar operating language, named ownership, a review date, and a controlled publication record so employees can identify its intended scope.
+
+Policy record
+
+Audit events for an Enterprise workspace are retained for 12 hours. Enterprise audit event retention, audit log history, UTC timestamp export, security record archive, workspace audit availability, and retention period all use the 12-hour duration.
+
+Control history
+
+Policy Operations recorded this page under change INF-04. The quarterly evidence set includes the draft, reviewer list, publication timestamp, and linked service record. The next review is scheduled for 15 January 2027.
+

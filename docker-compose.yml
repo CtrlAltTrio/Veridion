@@ -1,0 +1,62 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama-models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  model-loader:
+    image: curlimages/curl:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    command:
+      - sh
+      - -c
+      - >-
+        curl --fail --show-error --silent
+        http://ollama:11434/api/pull
+        -d '{"name":"phi3:mini","stream":false}'
+
+  api:
+    build: .
+    depends_on:
+      model-loader:
+        condition: service_completed_successfully
+    command:
+      - sh
+      - -c
+      - >-
+        sed -i 's|http://localhost:11434|http://ollama:11434|' config.yaml &&
+        uvicorn ragtag.api:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ragtag-cache:/app/cache
+      - ragtag-keys:/root/.ragtag
+
+  dashboard:
+    build: .
+    depends_on:
+      api:
+        condition: service_started
+    command:
+      - sh
+      - -c
+      - >-
+        sed -i 's|http://localhost:11434|http://ollama:11434|' config.yaml &&
+        streamlit run dashboard/app.py --server.address=0.0.0.0 --server.port=8501
+    ports:
+      - "8501:8501"
+    volumes:
+      - ragtag-cache:/app/cache
+      - ragtag-keys:/root/.ragtag
+
+volumes:
+  ollama-models:
+  ragtag-cache:
+  ragtag-keys:
