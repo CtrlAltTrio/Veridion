@@ -4,6 +4,20 @@ RAGtag is a pre-ingestion gate for RAG knowledge bases. It scores candidate
 documents for embedding anomaly, instruction injection, and retrieval influence,
 then returns an `ADMIT`, `QUARANTINE`, or `REJECT` verdict.
 
+## Screenshots
+
+### Dashboard
+
+![RAGtag dashboard](docs/screenshots/dashboard-overview.png)
+
+### Labelled evaluation metrics
+
+![RAGtag evaluation metrics](docs/screenshots/evaluation-metrics.png)
+
+### Rejected poisoning attempt
+
+![RAGtag rejected document](docs/screenshots/reject-verdict.png)
+
 The repository includes the local FAISS/Ollama demo, a compatible-endpoint
 adapter, three poisoning signals, signed admission evidence, an asynchronous
 API, a Streamlit analyst dashboard, and a 60-document labelled evaluation set.
