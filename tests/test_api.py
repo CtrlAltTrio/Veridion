@@ -59,16 +59,22 @@ def test_multipart_file_submission() -> None:
         assert result["doc_id"] == hashlib.sha256(b"candidate text").hexdigest()
 
 
-def test_verify_compares_sha256() -> None:
+def test_verify_uses_shared_evidence_verifier(monkeypatch) -> None:
     text = "sealed document"
-    digest = hashlib.sha256(text.encode()).hexdigest()
+    monkeypatch.setattr(
+        "ragtag.api.verify_evidence",
+        lambda current, evidence: (
+            current == text and evidence.get("token") == "valid",
+            "verified by shared sealing module",
+        ),
+    )
     with TestClient(create_app(lambda: FakePipeline())) as client:
-        valid = client.post("/verify", json={"text": text, "evidence": {"sha256": digest}})
-        invalid = client.post("/verify", json={"text": text + "!", "evidence": {"sha256": digest}})
+        valid = client.post("/verify", json={"text": text, "evidence": {"token": "valid"}})
+        invalid = client.post("/verify", json={"text": text + "!", "evidence": {"token": "valid"}})
 
     assert valid.json() == {
         "valid": True,
-        "reason": "document SHA-256 matches the evidence",
+        "reason": "verified by shared sealing module",
     }
     assert invalid.json()["valid"] is False
 

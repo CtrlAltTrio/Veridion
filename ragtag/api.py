@@ -3,8 +3,6 @@
 from __future__ import annotations
 
 import asyncio
-import hashlib
-import hmac
 import json
 from collections.abc import AsyncIterator, Callable
 from contextlib import asynccontextmanager
@@ -23,6 +21,7 @@ from ragtag.models import Verdict
 from ragtag.normalize import build_document, extract_text
 from ragtag.pipeline import Pipeline
 from ragtag.rag.local import LocalRAG
+from ragtag.sealing import verify as verify_evidence
 from ragtag.signals.anomaly import AnomalySignal
 from ragtag.signals.influence import InfluenceSignal, Probe
 from ragtag.signals.injection import InjectionSignal
@@ -157,13 +156,12 @@ def create_app(pipeline_factory: PipelineFactory = _build_pipeline) -> FastAPI:
 
     @application.post("/verify", response_model=VerifyResponse)
     async def verify(body: VerifyBody) -> VerifyResponse:
-        expected = body.evidence.get("sha256")
-        if not isinstance(expected, str) or not expected:
-            return VerifyResponse(valid=False, reason="evidence has no SHA-256 digest")
-        actual = hashlib.sha256(body.text.encode("utf-8")).hexdigest()
-        if not hmac.compare_digest(actual, expected):
-            return VerifyResponse(valid=False, reason="document SHA-256 does not match")
-        return VerifyResponse(valid=True, reason="document SHA-256 matches the evidence")
+        valid, reason = await asyncio.to_thread(
+            verify_evidence,
+            body.text,
+            body.evidence,
+        )
+        return VerifyResponse(valid=valid, reason=reason)
 
     @application.get("/corpus/stats")
     async def corpus_stats(request: Request) -> dict[str, int | str]:

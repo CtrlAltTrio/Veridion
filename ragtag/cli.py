@@ -1,5 +1,6 @@
 """Provide operator commands for the ingestion workflow in PRD sections 6 and 8."""
 
+import json
 from pathlib import Path
 
 import typer
@@ -8,6 +9,8 @@ import yaml
 from ragtag.config import settings
 from ragtag.pipeline import Pipeline
 from ragtag.rag.local import LocalRAG
+from ragtag.normalize import extract_text
+from ragtag.sealing import verify as verify_evidence
 from ragtag.signals.anomaly import AnomalySignal
 from ragtag.signals.influence import InfluenceSignal, Probe
 from ragtag.signals.injection import InjectionSignal
@@ -47,6 +50,26 @@ def scan(file: Path) -> None:
     typer.echo("Signals:")
     for name, result in verdict.signals.items():
         typer.echo(f"  {name:<10} {result.score:.3f}  {result.explanation}")
+
+
+@app.command("verify")
+def verify_command(file: Path, report: Path) -> None:
+    """Verify a document against a standalone signed evidence report."""
+
+    try:
+        text = extract_text(file)
+        evidence = json.loads(report.read_text(encoding="utf-8"))
+    except (OSError, ValueError, json.JSONDecodeError) as error:
+        typer.echo(f"FAIL: unable to read verification inputs: {error}", err=True)
+        raise typer.Exit(code=1) from error
+
+    valid, reason = verify_evidence(text, evidence)
+    if valid:
+        typer.echo(f"PASS: {reason}")
+        return
+
+    typer.echo(f"FAIL: {reason}", err=True)
+    raise typer.Exit(code=1)
 
 
 def main() -> None:
